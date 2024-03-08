@@ -12,16 +12,6 @@ class PageListKata extends StatefulWidget {
 }
 
 class _PageListKataState extends State<PageListKata> {  
-  TextEditingController _searchController = TextEditingController();
-  List<dynamic> _kosakataList = [];
-  List<dynamic> _filteredKosakataList = [];
-
-  @override
-  void initState() {
-    super.initState();
-    getKata();
-  }
-
   Future<void> getKata() async {
     final response = await http.get(Uri.parse('http://192.168.100.6/kamusDb/getKata.php'));
 
@@ -34,6 +24,16 @@ class _PageListKataState extends State<PageListKata> {
     } else {
       throw Exception('Failed to load kosakata');
     }
+  }
+
+  TextEditingController _searchController = TextEditingController();
+  List<dynamic> _kosakataList = [];
+  List<dynamic> _filteredKosakataList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getKata();
   }
 
   void _filterKosakata(String query) {
