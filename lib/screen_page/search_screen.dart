@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:kamusfrench_indo/screen_page/detail_screen.dart';
 // import 'package:kamusfrench_indo/models/model_kata.dart';
 
 class PageListKata extends StatefulWidget {
